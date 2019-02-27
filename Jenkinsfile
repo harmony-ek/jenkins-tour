@@ -1,12 +1,13 @@
 pipeline {
-    agent { docker { image 'golang' } }
+    agent { docker { image 'ubuntu:18.04' } }
     stages {
         stage('build') {
             steps {
-                sh 'go version'
                 sh '''
-                    echo "Multiline shell steps work too"
-                    ls -lah
+                    set -eux
+                    echo Hello world
+                    uname -a
+                    cat /etc/lsb-release
                 '''
             }
         }
