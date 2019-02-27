@@ -8,6 +8,9 @@ pipeline {
                     echo Hello world
                     uname -a
                     cat /etc/lsb-release
+                    pwd
+                    ls -la
+                    printenv
                 '''
             }
         }
