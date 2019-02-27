@@ -14,5 +14,15 @@ pipeline {
                 '''
             }
         }
+        stage('confirm') {
+            steps {
+                input "confirm the output above"
+            }
+        }
+        stage('continue') {
+            steps {
+                sh 'echo continuing'
+            }
+        }
     }
 }
